@@ -4,51 +4,82 @@
 
 import React, {Component} from 'react';
 import {
-    ActivityIndicator,
-    Button,
-    DatePickerIOS,
+    StyleSheet,
     View,
     Text,
-    TouchableHighlight,
+    PixelRatio
 } from 'react-native';
+import News from './News';
 import {color} from '../../../style/vars';
 
-export default class Test extends Component {
-
-    state = {
-        date: new Date()
-    };
-
-    setDate(date){
-        this.setState({
-            date
-        })
-    }
+class Test extends Component {
 
     render() {
         const props = this.props;
-        const state = this.state;
-        const {date} = state;
         return (
-            <View style={{flexDirection: 'row', height: 100, padding: 20}}>
-                <View style={{backgroundColor: 'blue', alignItems: 'center', justifyContent: 'center', flex: 0.3}}>
-                    <ActivityIndicator size={0}/>
+            <View style={styles.container}>
+                <View style={[styles.item, styles.center]}>
+                    <Text style={[styles.font]}>酒店</Text>
                 </View>
-                <View style={{backgroundColor: 'red', flex: 0.5}}>
-                    <Button
-                        onPress={this.alert.bind(this, 'this is a button')}
-                        title={'click me'}
-                        color={color.primary}
-                    />
+                <View style={[styles.item, styles.lineLeftRight]}>
+                    <View style={[styles.center, styles.flex, styles.lineCenter]}>
+                        <Text style={[styles.font]}>海外酒店</Text>
+                    </View>
+                    <View style={[styles.center, styles.flex]}>
+                        <Text style={[styles.font]}>特惠酒店</Text>
+                    </View>
                 </View>
-                <View>
-                    <DatePickerIOS onDateChange={this.setDate.bind(this)} date={date}/>
+                <View style={styles.item}>
+                    <View style={[styles.center, styles.flex, styles.lineCenter]}>
+                        <Text style={[styles.font]}>团购</Text>
+                    </View>
+                    <View style={[styles.center, styles.flex]}>
+                        <Text style={[styles.font]}>客栈公寓</Text>
+                    </View>
                 </View>
             </View>
         )
     }
-
-    alert(data){
-        alert(data)
-    }
 }
+
+export  default News;
+
+
+const styles = StyleSheet.create({
+    container: {
+        height: 84,
+        marginTop: 25,
+        marginLeft: 5,
+        marginRight: 5,
+        flexDirection: 'row',
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 2,
+        backgroundColor: '#ff0067',
+    },
+    item: {
+        flex: 1,
+        height: 80,
+    },
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    flex: {
+        flex: 1
+    },
+    font: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    lineLeftRight: {
+        borderLeftWidth: 1 / PixelRatio.get(),
+        borderRightWidth: 1 / PixelRatio.get(),
+        borderColor: '#fff'
+    },
+    lineCenter: {
+        borderBottomWidth: 1 / PixelRatio.get(),
+        borderColor: '#fff'
+    }
+});

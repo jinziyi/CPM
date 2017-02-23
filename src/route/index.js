@@ -4,24 +4,23 @@
 import React from 'react';
 import {
     View,
-    Navigator
+    Navigator,
+    NavigatorIOS,
 } from 'react-native';
-import List from '../views/Test';
+import Home from '../views/Home';
+import Test from '../views/Test';
 
 export default class RootRoute extends React.Component {
     render() {
-        let defaultName = 'list';
-        let defaultComponent = List;
+
         return (
-            <Navigator
-                initialRoute={{name: defaultName, component: defaultComponent}}
-                configureScene={(route) => {
-                    return Navigator.SceneConfigs.VerticalDownSwipeJump;
+            <NavigatorIOS
+                initialRoute={{
+                    component: Home,
+                    title: '首页'
                 }}
-                renderScene={(route, navigator) => {
-                    let Component = route.component;
-                    return <Component {...route.params} navigator={navigator}/>
-                }}/>
+                style={{flex: 1}}
+                />
         );
     }
 }

@@ -15,15 +15,13 @@ import {color} from '../style/vars';
 export class Nav extends Component {
     render() {
         const props = this.props;
-        const state = this.state;
         const {style, title, isActive = false, activeTitle = title, icon, activeIcon = icon} = props;
-        const {} = state;
         return (
             <View style={styles.root}>
                 <Text>
                     {isActive ? activeIcon : icon}
                 </Text>
-                <Text style={styles.nav[isActive ? 'act' : 'def']}>{isActive ? activeTitle : title}</Text>
+                <Text style={styles[(isActive ? 'act' : 'def')]}>{isActive ? activeTitle : title}</Text>
             </View>
         )
     }
@@ -36,9 +34,7 @@ export default class NavBar extends Component {
 
     render() {
         const props = this.props;
-        const state = this.state;
         const {style, navs} = props;
-        const {} = state;
 
         let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}).cloneWithRows(navs);
 
