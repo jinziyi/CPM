@@ -4,123 +4,82 @@
 
 import React, {Component} from 'react';
 import {
-    ActivityIndicator,
-    Button,
-    DatePickerIOS,
-    View,
-    Image,
-    WithLabel,
-    Heading,
-    Text,
     StyleSheet,
-    TextInput,
-    TouchableHighlight,
+    View,
+    Text,
+    PixelRatio
 } from 'react-native';
+import News from './News';
 import {color} from '../../../style/vars';
 
-export default class Test extends Component {
-
-    static defaultProps = {
-        date: new Date(),
-        timeZoneOffsetInHours: (-1) * (new Date()).getTimezoneOffset() / 60,
-    }
-
-    state = {
-        date: new Date(),
-        timeZoneOffsetInHours: (-1) * (new Date()).getTimezoneOffset() / 60,
-    };
-
-    setDate(date) {
-        this.setState({
-            date
-        })
-    }
-
-    onDateChange(date) {
-        this.setState({date: date});
-    }
-
-    onTimezoneChange(event) {
-        let offset = parseInt(event.nativeEvent.text, 10);
-        if (isNaN(offset)) {
-            return;
-        }
-        this.setState({timeZoneOffsetInHours: offset});
-    }
-
-    alert(data){
-        alert(data);
-    }
+class Test extends Component {
 
     render() {
         const props = this.props;
-        const state = this.state;
-        const {date} = state;
         return (
-            <View>
-                <View style={{flexDirection: 'row', height: 100, padding: 20}}>
-                    <Image
-                        style={{}}
-                        source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
-                    />
+            <View style={styles.container}>
+                <View style={[styles.item, styles.center]}>
+                    <Text style={[styles.font]}>酒店</Text>
                 </View>
-                <View>
-                    <DatePickerIOS
-                        date={this.state.date}
-                        mode="datetime"
-                        timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
-                        onDateChange={this.onDateChange.bind(this)}
-                        minuteInterval={15}
-                    />
-                    <DatePickerIOS
-                        date={this.state.date}
-                        mode="date"
-                        timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
-                        onDateChange={this.onDateChange.bind(this)}
-                        minimumDate={new Date('1971-01-01')}
-                    />
-                    <DatePickerIOS
-                        date={this.state.date}
-                        mode="time"
-                        timeZoneOffsetInMinutes={this.state.timeZoneOffsetInHours * 60}
-                        onDateChange={this.onDateChange.bind(this)}
-                        minuteInterval={10}
-                    />
+                <View style={[styles.item, styles.lineLeftRight]}>
+                    <View style={[styles.center, styles.flex, styles.lineCenter]}>
+                        <Text style={[styles.font]}>海外酒店</Text>
+                    </View>
+                    <View style={[styles.center, styles.flex]}>
+                        <Text style={[styles.font]}>特惠酒店</Text>
+                    </View>
                 </View>
-
+                <View style={styles.item}>
+                    <View style={[styles.center, styles.flex, styles.lineCenter]}>
+                        <Text style={[styles.font]}>团购</Text>
+                    </View>
+                    <View style={[styles.center, styles.flex]}>
+                        <Text style={[styles.font]}>客栈公寓</Text>
+                    </View>
+                </View>
             </View>
         )
     }
 }
 
+export  default News;
 
-var styles = StyleSheet.create({
-    textinput: {
-        height: 26,
-        width: 50,
-        borderWidth: 0.5,
-        borderColor: '#0f0f0f',
-        padding: 4,
-        fontSize: 13,
-    },
-    labelContainer: {
+
+const styles = StyleSheet.create({
+    container: {
+        height: 84,
+        marginTop: 25,
+        marginLeft: 5,
+        marginRight: 5,
         flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: 2,
+        borderWidth: 1,
+        borderRadius: 5,
+        padding: 2,
+        backgroundColor: '#ff0067',
     },
-    labelView: {
-        marginRight: 10,
-        paddingVertical: 2,
+    item: {
+        flex: 1,
+        height: 80,
     },
-    label: {
-        fontWeight: '500',
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    headingContainer: {
-        padding: 4,
-        backgroundColor: '#f6f7f8',
+    flex: {
+        flex: 1
     },
-    heading: {
-        fontWeight: '500',
-        fontSize: 14,
+    font: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold'
     },
+    lineLeftRight: {
+        borderLeftWidth: 1 / PixelRatio.get(),
+        borderRightWidth: 1 / PixelRatio.get(),
+        borderColor: '#fff'
+    },
+    lineCenter: {
+        borderBottomWidth: 1 / PixelRatio.get(),
+        borderColor: '#fff'
+    }
 });
