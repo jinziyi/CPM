@@ -7,20 +7,18 @@ import {
     Navigator,
     NavigatorIOS,
 } from 'react-native';
+import Touchable from '../views/Touchable';
 import Home from '../views/Home';
 import Test from '../views/Test';
+import Image from '../views/Image';
+import TabBar from '../views/TabBar';
+import WebView from '../views/WebView';
 
 export default class RootRoute extends React.Component {
     render() {
 
         return (
-            <NavigatorIOS
-                initialRoute={{
-                    component: Home,
-                    title: '首页'
-                }}
-                style={{flex: 1}}
-                />
+            <WebView/>
         );
     }
 }
