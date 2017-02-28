@@ -13,12 +13,19 @@ import Test from '../views/Test';
 import Image from '../views/Image';
 import TabBar from '../views/TabBar';
 import WebView from '../views/WebView';
+import Api from '../views/Api';
 
 export default class RootRoute extends React.Component {
     render() {
 
         return (
-            <WebView/>
+            <NavigatorIOS
+                initialRoute={{
+                    component: Api,
+                    title: 'Api'
+                }}
+                style={{flex: 1}}
+                />
         );
     }
 }
