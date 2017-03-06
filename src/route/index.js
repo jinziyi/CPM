@@ -14,6 +14,7 @@ import Image from '../views/Image';
 import TabBar from '../views/TabBar';
 import WebView from '../views/WebView';
 import Api from '../views/Api';
+import Xhr from '../views/Xhr';
 
 export default class RootRoute extends React.Component {
     render() {
@@ -21,7 +22,7 @@ export default class RootRoute extends React.Component {
         return (
             <NavigatorIOS
                 initialRoute={{
-                    component: Api,
+                    component: Xhr,
                     title: 'Api'
                 }}
                 style={{flex: 1}}

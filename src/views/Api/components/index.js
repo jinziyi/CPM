@@ -17,7 +17,10 @@ import {
     NetInfo,
     Image,
     CameraRoll,
+    VibrationIOS,
 } from 'react-native';
+import Camera from 'react-native-camera';
+import Geolocation from 'Geolocation';
 import {color} from '../../../style/vars';
 
 export default class Detail extends Component {
@@ -25,7 +28,8 @@ export default class Detail extends Component {
         super(props);
         this.state = {
             photos: [],
-            photo: ''
+            photo: 'http://baidu.com',
+            cameraType: Camera.constants.Type.back
         }
     }
 
@@ -40,13 +44,27 @@ export default class Detail extends Component {
         console.log(photo)
         return (
             <ScrollView style={styles.box}>
-                <ScrollView>
-                    <Image
-                        style={{width: 400, height: 700}}
-                        resizeMethod={'cover'}
-                        source={{uri: photo}}
-                    />
-                </ScrollView>
+                <Camera
+                    ref="cam"
+                    onBarCodeRead={this._onBarCodeRead.bind(this)}
+                    type={this.state.cameraType}
+                >
+                    <Text>welcome to react-native</Text>
+                    <Text>大撒撒</Text>
+                    <TouchableOpacity onPress={this._switchCamera.bind(this)}>
+                        <Text>The old switchCamera</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this._takePicker.bind(this)}>
+                        <Text>The old takePicker</Text>
+                    </TouchableOpacity>
+                </Camera>
+                {/*<ScrollView>*/}
+                {/*<Image*/}
+                {/*style={{width: 400, height: 700}}*/}
+                {/*resizeMethod={'resize'}*/}
+                {/*source={{uri: photo}}*/}
+                {/*/>*/}
+                {/*</ScrollView>*/}
                 <TouchableOpacity onPress={this.alert}>
                     <Text>
                         AlertIOS alert
@@ -72,9 +90,44 @@ export default class Detail extends Component {
                         保存图片
                     </Text>
                 </TouchableOpacity>
-
+                <TouchableOpacity onPress={this.vibration}>
+                    <Text>
+                        震动一下
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.getPosition}>
+                    <Text>
+                        获取位置
+                    </Text>
+                </TouchableOpacity>
             </ScrollView>
         )
+    }
+
+    getPosition(){
+        Geolocation.getCurrentPosition(data => alert(JSON.stringify(data)), alert)
+    }
+
+    vibration(){
+        VibrationIOS.vibrate();
+    }
+
+    _onBarCodeRead(e) {
+        console.log(e);
+    }
+
+    _switchCamera() {
+        const {back, front} = Camera.constants.Type;
+        console.log(Camera)
+        this.setState(({cameraType}) => ({
+            cameraType: cameraType === back ? front : back
+    }))
+    }
+
+    _takePicker() {
+        this.refs.cam.capture((err, data) => {
+            console.log(err, data)
+        })
     }
 
     saveImage() {
