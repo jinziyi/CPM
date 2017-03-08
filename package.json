@@ -4,15 +4,19 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle.ios": "react-native bundle --entry-file index.ios.js --bundle-output ./ios/main.jsbundle --platform ios --assets-dest ./ios --dev false",
+    "bundle.android": "react-native bundle --entry-file index.android.js --bundle-output ./android/app/src/main/assets/index.android.bundle --platform android --assets-dest ./android/app/src/main/res --dev false",
     "test": "jest"
   },
   "dependencies": {
     "react": "~15.4.0-rc.4",
     "react-native": "0.40.0",
     "react-native-camera": "^0.6.0",
+    "react-native-swiper": "^1.5.4",
     "react-native-vector-icons": "^4.0.0",
     "react-redux": "^5.0.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",

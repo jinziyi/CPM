@@ -22,7 +22,7 @@ export default class RootRoute extends React.Component {
         return (
             <NavigatorIOS
                 initialRoute={{
-                    component: Xhr,
+                    component: Image,
                     title: 'Api'
                 }}
                 style={{flex: 1}}

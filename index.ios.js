@@ -8,6 +8,6 @@ import React, { Component } from 'react';
 import {
   AppRegistry
 } from 'react-native';
-import Root from './src/';
+import Root from './duobao-src/';
 
 AppRegistry.registerComponent('CPM', Root);

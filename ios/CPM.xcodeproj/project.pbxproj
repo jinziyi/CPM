@@ -24,7 +24,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		434BD8881E6581A20045A5AF /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 434BD8871E6581800045A5AF /* libRCTCameraRoll.a */; };
 		43904A0F1E666BCE00810F85 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 439049F71E666B9B00810F85 /* libRCTCamera.a */; };
-		43DB6BBF1E5E8760006753A2 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 43DB6BBE1E5E8760006753A2 /* main.jsbundle */; };
+		43AAC48C1E6EB7B80089D191 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 43AAC48B1E6EB7B80089D191 /* main.jsbundle */; };
 		43DB6BC11E5E8840006753A2 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 43DB6BC01E5E8840006753A2 /* assets */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -250,7 +250,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		434BD8821E6581800045A5AF /* RCTCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCameraRoll.xcodeproj; path = "../node_modules/react-native/Libraries/CameraRoll/RCTCameraRoll.xcodeproj"; sourceTree = "<group>"; };
 		439049EF1E666B9B00810F85 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
-		43DB6BBE1E5E8760006753A2 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main.jsbundle; path = CPM/main.jsbundle; sourceTree = "<group>"; };
+		43AAC48B1E6EB7B80089D191 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		43DB6BC01E5E8840006753A2 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -369,8 +369,8 @@
 		13B07FAE1A68108700A75B9A /* CPM */ = {
 			isa = PBXGroup;
 			children = (
+				43AAC48B1E6EB7B80089D191 /* main.jsbundle */,
 				43DB6BC01E5E8840006753A2 /* assets */,
-				43DB6BBE1E5E8760006753A2 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -538,11 +538,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 2GET895Z8U;
+						DevelopmentTeam = A29WJM4LXU;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 2GET895Z8U;
+						DevelopmentTeam = A29WJM4LXU;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -824,10 +824,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43DB6BBF1E5E8760006753A2 /* main.jsbundle in Resources */,
 				43DB6BC11E5E8840006753A2 /* assets in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				43AAC48C1E6EB7B80089D191 /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +895,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 2GET895Z8U;
+				DEVELOPMENT_TEAM = A29WJM4LXU;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -913,7 +913,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 2GET895Z8U;
+				DEVELOPMENT_TEAM = A29WJM4LXU;
 				INFOPLIST_FILE = CPMTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -930,7 +930,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = 2GET895Z8U;
+				DEVELOPMENT_TEAM = A29WJM4LXU;
 				INFOPLIST_FILE = CPM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -951,7 +951,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2GET895Z8U;
+				DEVELOPMENT_TEAM = A29WJM4LXU;
 				INFOPLIST_FILE = CPM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
