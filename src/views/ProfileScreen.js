@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import Icon from '../components/Icon';
 
 const styles = StyleSheet.create({
     container: {
@@ -26,6 +27,7 @@ const ProfileScreen = (props) => (
 
 ProfileScreen.navigationOptions = {
     title: 'Profile',
+    tabBarIcon: ({tintColor}) => <Icon i='gear' tintColor={tintColor}/>
 };
 
 export default ProfileScreen;

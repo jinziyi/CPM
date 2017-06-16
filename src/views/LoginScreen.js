@@ -54,7 +54,7 @@ LoginScreen.propTypes = {
 
 LoginScreen.navigationOptions = {
     title: 'Log In',
-    tabBarIcon: <Icon i='user'/>
+    tabBarIcon: ({tintColor}) => <Icon i='user' tintColor={tintColor}/>
 };
 
 const mapStateToProps = state => ({

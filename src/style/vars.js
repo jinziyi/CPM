@@ -3,19 +3,21 @@
  */
 
 import {
-    Dimensions
+    Dimensions,
+    PixelRatio,
 } from 'react-native';
 
 const {height, width} = Dimensions.get('window');
 
 export const vars = {
-    primary: '#DB2013',
+    primary: '#5d77ee',
     success: '#0f0',
     error: '#f00',
     warning: '#ff0',
     gray: '#ccc',
     width,
     height,
+    px: 1 / PixelRatio.get()
 };
 
 export const fns = {
@@ -43,10 +45,11 @@ export const fns = {
             marginLeft: ml,
         }
     },
-    icon: (fontSize) => {
+    icon: (fontSize, color = vars.primary) => {
         return {
             fontFamily: 'fontawesome',
-            fontSize
+            fontSize,
+            color
         }
     }
 };

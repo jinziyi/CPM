@@ -7,4 +7,4 @@ import {Text} from 'react-native';
 import icon from 'react-native-iconic-font/fontawesome';
 import {fns} from '../../style/vars';
 
-export default ({i, fs = 20}) => <Text style={fns.icon(fs)}>{icon(i)}</Text>
+export default ({i, fs = 20, tintColor, style = {}}) => <Text style={[fns.icon(fs, tintColor), style]}>{icon(i)}</Text>
