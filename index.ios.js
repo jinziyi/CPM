@@ -4,10 +4,4 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry
-} from 'react-native';
-import Root from './duobao-src/';
-
-AppRegistry.registerComponent('CPM', Root);
+import './index.js';

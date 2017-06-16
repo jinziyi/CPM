@@ -1,8 +1,18 @@
 /**
  * Created by cjy on 16/11/23.
  */
-import * as vars from './vars';
+import {vars, fns} from './vars';
 
 export default {
-    ...vars
+    center: fns.flex('column', 'wrap', 'center', 'center'),
+    primary: {
+        color: vars.primary
+    },
+    primaryBg: {
+        backgroundColor: vars.primary,
+        color: '#fff'
+    },
+    flex: {
+        flex: 1
+    }
 }
