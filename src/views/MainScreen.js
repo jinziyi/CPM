@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
     },
 });
 
-const MainScreen = () => (
+const MainScreen = (props) => (
     <View style={styles.container}>
-        <LoginStatusMessage />
-        <AuthButton />
+        <LoginStatusMessage/>
+        <AuthButton/>
     </View>
 );
 

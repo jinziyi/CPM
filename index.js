@@ -9,17 +9,14 @@ import {
     AppRegistry
 } from 'react-native';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-
-import AppReducer from './src/reducers';
+import store from './src/redux';
 import Root from './src';
 
 class CPM extends Component {
-    store = createStore(AppReducer);
 
     render() {
         return (
-            <Provider store={this.store}>
+            <Provider store={store}>
                 <Root />
             </Provider>
         );

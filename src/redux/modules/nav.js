@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import {NavigationActions} from 'react-navigation';
 
-import {AppNavigator} from '../navigators/index';
+import {AppNavigator} from '../../navigators/index';
 
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Main');
@@ -36,22 +36,4 @@ function nav(state = initialNavState, action) {
     return nextState || state;
 }
 
-const initialAuthState = {isLoggedIn: false};
-
-function auth(state = initialAuthState, action) {
-    switch (action.type) {
-        case 'Login':
-            return {...state, isLoggedIn: true};
-        case 'Logout':
-            return {...state, isLoggedIn: false};
-        default:
-            return state;
-    }
-}
-
-const AppReducer = combineReducers({
-    nav,
-    auth,
-});
-
-export default AppReducer;
+export default nav;
