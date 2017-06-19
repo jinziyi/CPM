@@ -21,15 +21,14 @@ const styles = StyleSheet.create({
 export class LoginScreen extends Component {
 
     componentWillReceiveProps(np) {
-        const {isLoggedIn, MainScreen} = np;
+        const {isLoggedIn, navigation} = np;
         if (isLoggedIn) {
-            // MainScreen();
+            navigation.navigateAction('Main');
         }
     }
 
     render() {
-        const {login} = this.props;
-        console.log(this.props)
+        const {isLoggedIn, login, navigation} = this.props;
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
@@ -40,7 +39,7 @@ export class LoginScreen extends Component {
                     This is great
                 </Text>
                 <Button
-                    onPress={login}
+                    onPress={() => isLoggedIn ? navigation.navigateAction('Main') : login()}
                     title="Log in"
                 />
             </View>
@@ -62,7 +61,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-    login: actions.login
+    login: actions.login,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

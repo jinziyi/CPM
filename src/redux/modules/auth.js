@@ -4,11 +4,11 @@ const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
 
 export const actions = {
-    login: data => dispatch => data => dispatch({
+    login: data => dispatch => dispatch({
         type: LOGIN,
         data
     }),
-    logout:data => dispatch => data => dispatch({
+    logout:data => dispatch => dispatch({
         type: LOGOUT,
         data
     })
@@ -18,7 +18,9 @@ export const actions = {
 const initialState = {isLoggedIn: false};
 
 const reducers = {
-    [LOGIN]: state => ({...state, isLoggedIn: true}),
+    [LOGIN]: state => {
+        return {...state, isLoggedIn: true}
+    },
     [LOGOUT]: state => ({...state, isLoggedIn: false}),
 };
 
