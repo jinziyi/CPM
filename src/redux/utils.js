@@ -26,7 +26,7 @@ export const createApiActions = (keyword, type) => ({
     error: mergeAction(type, keyword, 'ERROR'),
 });
 
-export const navigateAction = (routeName) => dispatch => dispatch(NavigationActions.navigate({routeName}));
+export const navigateAction = (routeName) => NavigationActions.navigate({routeName});
 
 export default {
     createReducer,

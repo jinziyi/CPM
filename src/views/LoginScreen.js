@@ -23,6 +23,7 @@ export class LoginScreen extends Component {
     componentWillReceiveProps(np) {
         const {isLoggedIn, navigation} = np;
         if (isLoggedIn) {
+            console.log(navigation)
             navigation.navigateAction('Main');
         }
     }
