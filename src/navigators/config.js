@@ -2,13 +2,10 @@
  * Created by cjy on 16/11/23.
  */
 import {vars} from '../style/vars';
+import MainScreen from '../views/MainScreen/index';
+import ProfileScreen from '../views/ProfIleScreen/index';
 
-import LoginScreen from '../views/LoginScreen';
-import MainScreen from '../views/MainScreen';
-import ProfileScreen from '../views/ProfileScreen';
-
-export const navigatorConfigs = {
-    Login: {screen: LoginScreen},
+export const RouteConfigs = {
     Main: {screen: MainScreen},
     Profile: {screen: ProfileScreen},
 };
@@ -20,5 +17,10 @@ export const navigatorOptions = {
             backgroundColor: '#efefef',
         },
     },
+    mode: 'modal',
+    initialRouteName: 'Main',
+    cardStyle: {
+        alignSelf: 'center'
+    }
 };
 

@@ -1,30 +1,23 @@
 /**
  * Created by cjy on 16/11/23.
  */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addNavigationHelpers} from 'react-navigation';
-import {navigateAction} from './redux/utils';
-import {AppNavigator} from './navigators';
+import React, {Component} from 'react';
+import {View} from 'react-native';
+import {connect} from 'react-redux';
+import Login from './views/LoginScreen';
+import Main from './navigators';
 
-const AppWithNavigationState = ({ dispatch, nav, navigateAction }) => (
-    <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav, navigateAction})} />
-);
-
-AppWithNavigationState.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    nav: PropTypes.object.isRequired,
-    navigateAction: PropTypes.func.isRequired,
+export const App = props => {
+    const {isLogin} = props;
+    return (
+        <View style={{flex: 1}}>
+            {isLogin ? <Main/> : <Login/>}
+        </View>
+    )
 };
 
-const mapStateToProps = state => ({
-    nav: state.nav,
+const mapStateToProps = (state, props) => ({
+    isLogin: state.auth.isLoggedIn
 });
 
-const mapDispatchToProps = dispatch => ({
-    navigateAction: (routeName) => dispatch(navigateAction(routeName)),
-    dispatch
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppWithNavigationState);
+export default connect(mapStateToProps)(App);
