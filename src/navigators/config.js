@@ -13,10 +13,14 @@ export const RouteConfigs = {
 export const navigatorOptions = {
     tabBarOptions: {
         activeTintColor: vars.primary,
+        showIcon: true,
         style: {
             backgroundColor: '#efefef',
         },
     },
+    animationEnabled: true,
+    swipeEnabled: true,
+    tabBarPosition: 'bottom',
     mode: 'modal',
     initialRouteName: 'Main',
     cardStyle: {
