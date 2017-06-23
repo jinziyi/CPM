@@ -1,23 +1,21 @@
 /**
- * Created by cjy on 16/11/23.
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
  */
+
 import React, {Component} from 'react';
-import {View} from 'react-native';
-import {connect} from 'react-redux';
-import Login from './views/LoginScreen';
-import Main from './navigators';
+import {Provider} from 'react-redux';
+import store from './redux';
+import Root from './App';
 
-export const App = props => {
-    const {isLogin} = props;
-    return (
-        <View style={{flex: 1}}>
-            {isLogin ? <Main/> : <Login/>}
-        </View>
-    )
-};
+export default class CPM extends Component {
 
-const mapStateToProps = (state, props) => ({
-    isLogin: state.auth.isLoggedIn
-});
-
-export default connect(mapStateToProps)(App);
+    render() {
+        return (
+            <Provider store={store}>
+                <Root />
+            </Provider>
+        );
+    }
+}

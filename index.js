@@ -1,26 +1,11 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * Created by cjy on 16/11/23.
  */
 
 import React, {Component} from 'react';
 import {
     AppRegistry
 } from 'react-native';
-import {Provider} from 'react-redux';
-import store from './src/redux';
-import Root from './src';
-
-class CPM extends Component {
-
-    render() {
-        return (
-            <Provider store={store}>
-                <Root />
-            </Provider>
-        );
-    }
-}
+import CPM from './src';
 
 AppRegistry.registerComponent('CPM', () => CPM);

@@ -4,4 +4,4 @@
  * @flow
  */
 
-import './index.js';
+import './src/index.js';
