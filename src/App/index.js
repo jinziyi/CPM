@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
 import {connect} from 'react-redux';
-import Login from '../views/LoginScreen';
+import Login from '../views/LoginScreen/index';
 import Main from '../navigators';
 
 export const App = props => {

@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {actions} from '../../redux/modules/auth';
-import Icon from '../../components/Icon';
 
 const styles = StyleSheet.create({
     container: {
@@ -45,15 +44,6 @@ export class LoginScreen extends Component {
         )
     };
 }
-
-LoginScreen.propTypes = {
-    navigation: PropTypes.object.isRequired,
-};
-
-LoginScreen.navigationOptions = {
-    title: 'Log In',
-    tabBarIcon: ({tintColor}) => <Icon i='ios-cash' tintColor={tintColor}/>
-};
 
 const mapStateToProps = state => ({
     isLoggedIn: state.auth.isLoggedIn,

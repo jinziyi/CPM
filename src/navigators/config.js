@@ -2,8 +2,8 @@
  * Created by cjy on 16/11/23.
  */
 import {vars} from '../style/vars';
-import MainScreen from '../views/MainScreen/index';
-import ProfileScreen from '../views/ProfIleScreen/index';
+import MainScreen from '../views/MainScreen';
+import ProfileScreen from '../views/ProfileScreen';
 
 export const RouteConfigs = {
     Main: {screen: MainScreen},
