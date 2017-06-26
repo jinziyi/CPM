@@ -21,7 +21,7 @@ export const vars = {
 };
 
 export const fns = {
-    flex: (direction = 'column', wrap = 'wrap', justifyContent, alignItems) => {
+    flex: (justifyContent = 'center', alignItems = 'center', direction = 'column', wrap = 'wrap') => {
         return {
             justifyContent,
             flexWrap: wrap,
@@ -45,11 +45,11 @@ export const fns = {
             marginLeft: ml,
         }
     },
-    icon: (fontSize, color = vars.primary) => {
+    border: (width, style, color) => {
         return {
-            fontFamily: 'fontawesome',
-            fontSize,
-            color
+            borderWidth: width,
+            borderStyle: style,
+            borderColor: color,
         }
     }
 };

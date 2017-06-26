@@ -22,8 +22,8 @@ const MainScreen = (props) => (
 );
 
 MainScreen.navigationOptions = {
-    title: 'Home Screen',
-    tabBarIcon: ({tintColor}) => <Icon i='home' tintColor={tintColor}/>
+    title: 'List Screen',
+    tabBarIcon: ({tintColor}) => <Icon i='checklist' family="Octicons" color={tintColor}/>
 };
 
 export default MainScreen;

@@ -4,7 +4,7 @@
 import {vars, fns} from './vars';
 
 export default {
-    center: fns.flex('column', 'wrap', 'center', 'center'),
+    center: fns.flex('center', 'center'),
     primary: {
         color: vars.primary
     },
@@ -15,4 +15,9 @@ export default {
     flex: {
         flex: 1
     }
+}
+
+export {
+    vars,
+    fns,
 }

@@ -1,21 +1,9 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
+import Button from '../../components/Button';
 import {actions} from '../../redux/modules/auth';
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-});
+import styles from './style';
 
 export class LoginScreen extends Component {
 
@@ -27,30 +15,56 @@ export class LoginScreen extends Component {
     }
 
     render() {
-        const {isLoggedIn, login, navigation} = this.props;
+        const {isLoggedIn, navigation, onChangePassword, value} = this.props;
+        const login = this.loin.bind(this);
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Screen A
+                    请验证密码
                 </Text>
-                <Text style={styles.instructions}>
-                    This is great
-                </Text>
+                <View style={styles.inputBox}>
+                    <TextInput
+                        autoFocus={true}
+                        placeholder='请输入密码'
+                        onSubmitEditing={login}
+                        returnKeyType="done"
+                        secureTextEntry={true}
+                        underlineColorAndroid='transparent'
+                        onChangeText={onChangePassword}
+                        clearButtonMode={'while-editing'}
+                        value={value}
+                        style={styles.input}
+                    />
+                </View>
                 <Button
                     onPress={() => isLoggedIn ? navigation.navigateAction('Main') : login()}
-                    title="Log in"
-                />
+                    style={styles.button}>
+                    Log In
+                </Button>
             </View>
         )
-    };
+    }
+
+    loin() {
+        const {value, login} = this.props;
+        if (!value) {
+            return alert('密码不能为空');
+        }
+        login();
+    }
 }
 
-const mapStateToProps = state => ({
-    isLoggedIn: state.auth.isLoggedIn,
-});
+const mapStateToProps = state => {
+    const {isLoggedIn, value} = state.auth;
+    return {
+        isLoggedIn,
+        value,
+    }
+};
 
 const mapDispatchToProps = {
     login: actions.login,
+    onChangePassword: actions.onChangePassword
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

@@ -27,7 +27,7 @@ const ProfileScreen = (props) => (
 
 ProfileScreen.navigationOptions = {
     title: 'Profile',
-    tabBarIcon: ({tintColor}) => <Icon i='gear' tintColor={tintColor}/>
+    tabBarIcon: ({tintColor}) => <Icon i='gear' color={tintColor}/>
 };
 
 export default ProfileScreen;
