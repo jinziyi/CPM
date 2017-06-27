@@ -20,7 +20,7 @@ export const actions = {
 };
 
 
-const initialState = {isLoggedIn: true};
+const initialState = {isLoggedIn: false};
 
 const reducers = {
     [LOGIN]: state => {
