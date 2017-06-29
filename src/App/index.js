@@ -7,14 +7,7 @@ import {connect} from 'react-redux';
 import Login from '../views/LoginScreen/index';
 import Main from '../navigators';
 
-export const App = props => {
-    const {isLogin} = props;
-    return (
-        <View style={{flex: 1}}>
-            {isLogin ? <Main/> : <Login/>}
-        </View>
-    )
-};
+export const App = props => <View style={{flex: 1}}>{props.isLogin ? <Main/> : <Login/>}</View>;
 
 const mapStateToProps = (state, props) => ({
     isLogin: state.auth.isLoggedIn
