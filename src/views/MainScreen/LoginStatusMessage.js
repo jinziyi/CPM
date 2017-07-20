@@ -19,12 +19,12 @@ const LoginStatusMessage = ({ isLoggedIn, dispatch }) => {
   return (
     <View>
       <Text style={styles.welcome}>
-        {'You are "logged in" right now'}
+        这是列表页！
       </Text>
       <Button
         onPress={() =>
           dispatch(NavigationActions.navigate({ routeName: 'Profile' }))}
-        title="Profile"
+        title="Go to Profile"
       />
     </View>
   );

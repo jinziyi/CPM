@@ -47,8 +47,8 @@ export class LoginScreen extends Component {
 
     loin() {
         const {value, login} = this.props;
-        if (!value) {
-            return alert('密码不能为空');
+        if (value !== 'cjy123') {
+            return alert('密码错误');
         }
         login();
     }
